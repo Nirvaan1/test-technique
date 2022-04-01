@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use App\Repository\StudentRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ORM\Entity(repositoryClass=StudentRepository::class)
@@ -19,16 +21,19 @@ class Student
 
     /**
      * @ORM\Column(type="string", length=25)
+     * @Assert\NotBlank
      */
     private $firstname;
 
     /**
      * @ORM\Column(type="string", length=25)
+     * @Assert\NotBlank
      */
     private $lastname;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @Assert\Type(type={"alpha", "digit"})
      */
     private $num_etud;
 

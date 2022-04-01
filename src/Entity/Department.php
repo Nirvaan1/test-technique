@@ -21,11 +21,13 @@ class Department
 
     /**
      * @ORM\Column(type="string", length=25)
+     * @Assert\NotBlank
      */
     private $name;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @Assert\Type(type={"alpha", "digit"})
      */
     private $capacity;
 

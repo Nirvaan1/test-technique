@@ -16,7 +16,6 @@ class StudentType extends AbstractType
             ->add('firstname')
             ->add('lastname')
             ->add('num_etud')
-            ->add('Ajouter', SubmitType::class)
         ;
     }
 

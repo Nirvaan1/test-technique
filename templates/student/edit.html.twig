@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Ajouter un etudiant</h1>
+    <h1>Modifier le profil de {{ student.firstname}} {{ student.lastname}}</h1>
     {% include('student/form.html.twig') %}
 
     <button class="btn btn-primary margin-xl" type="submit" name="action" style="margin-top: 30px;">

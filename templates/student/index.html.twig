@@ -3,18 +3,36 @@
 {% block title %}Hello StudentController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<h1>Liste des étudiants</h1>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<table class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Prénom</th>
+        <th scope="col">Nom de famille</th>
+        <th scope="col">Numéro de Tel</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for student in students %}
+    <tr>
+        <th scope="row"> {{ student.id }}</th>
+        <td>{{ student.firstname }}</td>
+        <td>{{ student.lastname }}</td>
+        <td>{{ student.numEtud}}</td>
+        <td>
+            <a href="#">
+                <button type="button" class="btn btn-primary">Modifier</button>
+            </a>
+            <a href="#">
+                <button type="button" class="btn btn-danger">Supprimer</button>
+            </a>
+        </td>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/Users/nirvaanguilloux/Project/test-technique/src/Controller/StudentController.php'|file_link(0) }}">src/Controller/StudentController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Users/nirvaanguilloux/Project/test-technique/templates/student/index.html.twig'|file_link(0) }}">templates/student/index.html.twig</a></code></li>
-    </ul>
-</div>
+    </tr>
+    {% endfor %}
+
+    </tbody>
+</table>
 {% endblock %}

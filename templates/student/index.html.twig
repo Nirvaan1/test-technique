@@ -22,10 +22,10 @@
         <td>{{ student.lastname }}</td>
         <td>{{ student.numEtud}}</td>
         <td>
-            <a href="#">
+            <a href="{{ path('app_student_edit', {'id': student.id}) }}">
                 <button type="button" class="btn btn-primary">Modifier</button>
             </a>
-            <a href="#">
+            <a href="{{ path('app_student_delete', {'id': student.id}) }}">
                 <button type="button" class="btn btn-danger">Supprimer</button>
             </a>
         </td>

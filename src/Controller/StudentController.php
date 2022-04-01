@@ -71,4 +71,15 @@ class StudentController extends AbstractController
         ]);
     }
 
+
+    /**
+     * @Route("/student/delete/{id}", name="app_student_delete")
+     */
+    public function delete(Student $student, EntityManagerInterface $entityManager): Response
+    {
+        $entityManager->remove($student);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('app_student_home');
+    }
 }

@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+    <h1>Ajouter un departement</h1>
+
+    {% include('department/form.html.twig') %}
+
+
+    <button class="btn btn-primary margin-xl" type="submit" name="action" style="margin-top: 30px;">
+        Ajouter !
+    </button>
+
+    {{ form_end(form) }}
+
+{% endblock %}

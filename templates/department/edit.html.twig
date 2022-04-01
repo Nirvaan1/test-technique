@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+    <h1>Modifier le department de {{ department.name}}</h1>
+    {% include('department/form.html.twig') %}
+
+    <button class="btn btn-primary margin-xl" type="submit" name="action" style="margin-top: 30px;">
+        Sauvegarder !
+    </button>
+    {{ form_end(form) }}
+
+{% endblock %}

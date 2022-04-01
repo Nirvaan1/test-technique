@@ -12,6 +12,8 @@
         <th scope="col">Prénom</th>
         <th scope="col">Nom de famille</th>
         <th scope="col">Numéro de Tel</th>
+        <th scope="col">Departement</th>
+        <th scope="col">Action</th>
     </tr>
     </thead>
     <tbody>
@@ -21,6 +23,8 @@
         <td>{{ student.firstname }}</td>
         <td>{{ student.lastname }}</td>
         <td>{{ student.numEtud| strpad(10,'0')}}</td>
+        <td>{{ student.department.name is defined ?  student.department.name : ' '  }}</td>
+
         <td>
             <a href="{{ path('app_student_edit', {'id': student.id}) }}">
                 <button type="button" class="btn btn-primary">Modifier</button>
